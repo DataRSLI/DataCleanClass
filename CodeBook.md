@@ -3,7 +3,7 @@
 
 The following offers information about variables, summary choices and experimental study design.
 
-    Study Design:
+Study Design:
 	
 	Introduction:
 
@@ -26,27 +26,27 @@ The following offers information about variables, summary choices and experiment
 		Located in: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 	
 	
-    Data Transformations:
+Data Transformations:
 
-	-  First the script double checks the current directory (getwd ())and 
-  	   allows for the setting of the proper directory if necessary (setwd())    
+-  First the script double checks the current directory (getwd ())and 
+   allows for the setting of the proper directory if necessary (setwd())    
          
-        -  Second the script loads packages and libraries that are assumed
-           common for data scrubbing tasks of this nature
+-  Second the script loads packages and libraries that are assumed
+   common for data scrubbing tasks of this nature
 
-	-  Third the script offers the ability create new files and 
- 	   directories. Since this script assumes that you are in the 
-	   working directory, this is probably a moot point but is there
-	   in any case.
+-  Third the script offers the ability create new files and 
+   directories. Since this script assumes that you are in the 
+   working directory, this is probably a moot point but is there
+   in any case.
 
-	-  Fourth the script reads in the text files from the the working
+-  Fourth the script reads in the text files from the the working
  	   directory that are needed for data processing (e.g../test/y_test.txt")
  
-	-  Fifth the script binds the the rows from the data sets that 
-	   were read in from the text files this allows for vertical
-	   integration of the dataframes Testset and Trainset
+-  Fifth the script binds the the rows from the data sets that 
+   were read in from the text files this allows for vertical
+   integration of the dataframes Testset and Trainset
 
-	-  Sixth the script reads in the feature data (feature.txt) then:
+-  Sixth the script reads in the feature data (feature.txt) then:
 		1. Names each column in the file
                 2. Assigns the Frequency Domain Signal Column to varible x
 		3. Pattern Matches using \\ to escape for grep and R
@@ -57,8 +57,8 @@ The following offers information about variables, summary choices and experiment
 		7. Clean the column names through removing and replacing characters
 	           in the selected datasets
  
-        -  Seventh the TestLabels and Trainlabels are integrated 
-	   using rbind and activity labels is read into R. Next:
+-  Seventh the TestLabels and Trainlabels are integrated 
+   using rbind and activity labels is read into R. Next:
 
  	 	1. Activity Columns are named
                 2. Assigns the Frequency Domain Signal Column
@@ -66,24 +66,24 @@ The following offers information about variables, summary choices and experiment
 		4. The cleaned activity description column is stored 
 		   in ActivityLabs
 
-	-  Eighth Subject.idTest and Subject.idTrain are integrated 
-	   using rbind and and stored in Subject.ID. Next:
+-  Eighth Subject.idTest and Subject.idTrain are integrated 
+   using rbind and and stored in Subject.ID. Next:
 
  	 	1. The "Subject.ID" name is given to Subject.ID
 		2. The Subject ID, Activity Levels, and N feature columns
 		   where integrated created a new data frame called NewDataSet
 		4. The new data is checked for correctness
 		
-	-  Ninth the new data set is written out to working directory
+-  Ninth the new data set is written out to working directory
 
 
-	-  Tenth the script melts the NewDataSet and then dcasts that data
+-  Tenth the script melts the NewDataSet and then dcasts that data
 	   taking the mean for each activity, for each subject, for each variable
 
-	-  Eleventh the new data set is written out to working directory
+-  Eleventh the new data set is written out to working directory
 
     
-    Codebook: 
+Codebook: 
 
 	
 	These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. 
