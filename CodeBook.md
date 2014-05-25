@@ -1,9 +1,9 @@
 ## Data Science Specialization - Coursera: Project Code Book
 
 
-The following offers information about variables, summary choices and experimental study design.
+The following offers information about experimental study design, data transformations, and provides a code book.
 
-Study Design:
+I.Study Design:
 	
 	Introduction:
 
@@ -26,7 +26,7 @@ Study Design:
 		Located in: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 	
 	
-Data Transformations:
+II.Data Transformations:
 
 -  First the script double checks the current directory (getwd ())and 
    allows for the setting of the proper directory if necessary (setwd())    
@@ -40,13 +40,13 @@ Data Transformations:
    in any case.
 
 -  Fourth the script reads in the text files from the the working
- 	   directory that are needed for data processing (e.g../test/y_test.txt")
+   directory that are needed for data processing (e.g../test/y_test.txt")
  
 -  Fifth the script binds the the rows from the data sets that 
-   were read in from the text files this allows for vertical
-   integration of the dataframes Testset and Trainset
+   were read in from the text files.
 
 -  Sixth the script reads in the feature data (feature.txt) then:
+
 		1. Names each column in the file
                 2. Assigns the Frequency Domain Signal Column to varible x
 		3. Pattern Matches using \\ to escape for grep and R
@@ -54,36 +54,37 @@ Data Transformations:
 		4. This is repeated for the Mean and Standard Deviation seperatly
 		5. The sets of indices are concatenated and sorted in the proper order
 		6. The indices are used to index the Dataset 
-		7. Clean the column names through removing and replacing characters
+		7. The column names are cleaned through removing and replacing characters
 	           in the selected datasets
  
--  Seventh the TestLabels and Trainlabels are integrated 
-   using rbind and activity labels is read into R. Next:
+-  Seventh the TestLabels and Trainlabels are combined
+   using rbind() and activity labels are read into R. Next:
 
- 	 	1. Activity Columns are named
-                2. Assigns the Frequency Domain Signal Column
+ 	 	1. Activity Columns are renamed
+                2. The the Frequency Domain Signal Column is assigned to varible x
+		   (note: x was chose to match the genral for of grep())
 		3. Pattern Matches replacing "-" using grep
 		4. The cleaned activity description column is stored 
 		   in ActivityLabs
 
 -  Eighth Subject.idTest and Subject.idTrain are integrated 
-   using rbind and and stored in Subject.ID. Next:
+   using rbind() and and stored in Subject.ID. Next:
 
  	 	1. The "Subject.ID" name is given to Subject.ID
-		2. The Subject ID, Activity Levels, and N feature columns
-		   where integrated created a new data frame called NewDataSet
+		2. The Subject ID, Activity Levels, and DataSet
+		   where integrated and created a new data frame called NewDataSet
 		4. The new data is checked for correctness
 		
--  Ninth the new data set is written out to working directory
+-  Ninth the new data set from set eight is written out to working directory
 
 
--  Tenth the script melts the NewDataSet and then dcasts that data
-	   taking the mean for each activity, for each subject, for each variable
+-  Tenth the script reshapes the NewDataSet using the melt() and dcast().The dcast() takes
+   the mean for each activity, for each subject, for each variable
 
--  Eleventh the new data set is written out to working directory
+-  Eleventh the new data set from step ten is written out to working directory
 
     
-Codebook: 
+III. Codebook: 
 
 	
 	These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. 
@@ -113,7 +114,7 @@ Codebook:
 	(tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ)
 	(Note: Acc  for X,Y,Z:standard gravity units 'g')
 	(Note: Gyro for X,Y,Z:units are radians/second) 
-	(Note: Mean and Standard Deviation of these measures for each axis)
+	(Note: These varibles capture the Mean and Standard Deviation for each axis)
 
 	"13" "tBodyAccJerk.MeanValues.X"
 	"14" "tBodyAccJerk.MeanValues.Y"
@@ -140,7 +141,7 @@ Codebook:
 	tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
 	(Note: Acc :standard gravity units 'g')
 	(Note: Gyro:units are radians/second) 
-	(Note: Mean and Standard Deviation of these measures for each axis)
+	(Note: These varibles capture the Mean and Standard Deviation for each axis)
 
 	
 	"31" "tBodyAccMag.MeanValues"
@@ -161,6 +162,7 @@ Codebook:
 	signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, 
 	fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. 
 	(Note the 'f' to indicate frequency domain signals). 
+	(Note: These varibles capture the Mean and Standard Deviation for each axis)
 
 	"41" "fBodyAcc.MeanValues.X"
 	"42" "fBodyAcc.MeanValues.Y"
