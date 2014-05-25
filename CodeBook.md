@@ -48,7 +48,7 @@ II.Data Transformations:
 -  Sixth the script reads in the feature data (feature.txt) then:
 
 		1. Names each column in the file
-                2. Assigns the Frequency Domain Signal Column to varible x
+            2. Assigns the Frequency Domain Signal Column to varible x
 		3. Pattern Matches using \\ to escape for grep and R
 		   Locate the patterns and return the matched index(Value=TRUE)
 		4. This is repeated for the Mean and Standard Deviation seperatly
@@ -61,7 +61,7 @@ II.Data Transformations:
    using rbind() and activity labels are read into R. Next:
 
  	 	1. Activity Columns are renamed
-                2. The the Frequency Domain Signal Column is assigned to varible x
+             2. The the Frequency Domain Signal Column is assigned to varible x
 		   (note: x was chose to match the genral for of grep())
 		3. Pattern Matches replacing "-" using grep
 		4. The cleaned activity description column is stored 
@@ -94,7 +94,8 @@ III. Codebook:
 	with a corner frequency of 0.3 Hz.and The units are radians/second. 
 	(Note: Acc  for X,Y,Z:standard gravity units 'g')
 	(Note: Gyro for X,Y,Z:units are radians/second) 
-	(Note: Mean and Standard Deviation of these measures for each axis)
+	(Note: The Mean and Standard Deviation for each axis is captured
+	 in 1-12)
 	
 	"1"  "tBodyAcc.MeanValues.X"
 	"2"  "tBodyAcc.MeanValues.Y"
@@ -114,7 +115,8 @@ III. Codebook:
 	(tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ)
 	(Note: Acc  for X,Y,Z:standard gravity units 'g')
 	(Note: Gyro for X,Y,Z:units are radians/second) 
-	(Note: These varibles capture the Mean and Standard Deviation for each axis)
+	(Note: The Mean and Standard Deviation for each axis is captured
+	 in 13-30)
 
 	"13" "tBodyAccJerk.MeanValues.X"
 	"14" "tBodyAccJerk.MeanValues.Y"
@@ -141,8 +143,8 @@ III. Codebook:
 	tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
 	(Note: Acc :standard gravity units 'g')
 	(Note: Gyro:units are radians/second) 
-	(Note: These varibles capture the Mean and Standard Deviation for each magnitude)
-
+	(Note: The Mean and Standard Deviation for each magnitude is captured
+	 in 31-40)
 	
 	"31" "tBodyAccMag.MeanValues"
 	"32" "tBodyAccMag.StdValues"
@@ -161,8 +163,9 @@ III. Codebook:
 	A Fast Fourier Transform (FFT) was applied to some of these 
 	signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, 
 	fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. 
-	(Note the 'f' to indicate frequency domain signals). 
-	(Note: These varibles capture the Mean and Standard Deviation for each axis)
+	(Note  The 'f' to indicate frequency domain signals). 
+	(Note: The Mean and Standard Deviation for each axis and magnitude is captured
+	 in 41-66)
 
 	"41" "fBodyAcc.MeanValues.X"
 	"42" "fBodyAcc.MeanValues.Y"
