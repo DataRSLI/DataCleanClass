@@ -141,7 +141,7 @@ III. Codebook:
 	tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
 	(Note: Acc :standard gravity units 'g')
 	(Note: Gyro:units are radians/second) 
-	(Note: These varibles capture the Mean and Standard Deviation for each axis)
+	(Note: These varibles capture the Mean and Standard Deviation for each magnitude)
 
 	
 	"31" "tBodyAccMag.MeanValues"
